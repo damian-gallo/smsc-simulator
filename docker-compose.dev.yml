@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  smsc-simulator:
+    restart: unless-stopped
+    build:
+      context: ./src
+      dockerfile: Dockerfile.dev
+    environment:
+      - PORT=2775
+      - SYSTEM_ID=admin
+      - PASSWORD=secret
+    ports:
+      - 2775:2775
+    volumes:
+      - /app/node_modules
+      - ./src:/app
