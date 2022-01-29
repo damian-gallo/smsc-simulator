@@ -31,7 +31,7 @@ const server = smpp.createServer((session) => {
         source_addr: destination_addr,
         short_message: message + "!?",
       });
-    }, 1000);
+    }, 3000);
   });
 });
 
